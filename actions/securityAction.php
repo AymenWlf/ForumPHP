@@ -2,6 +2,6 @@
 session_start();
 if(!$_SESSION['auth'])
 {
-    header('Location: signUp.php');
-    
-}?>
+    header('Location: logIn.php');
+}
+?>

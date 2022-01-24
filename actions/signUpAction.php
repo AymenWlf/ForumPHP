@@ -4,7 +4,7 @@ require('actions/database.php');
 
 if(isset($_POST['submit']))
 {
-    if(!empty($_POST['username'] AND $_POST['password']))
+    if(!empty($_POST['username'] AND $_POST['password'] AND $_POST['lastname']))
     {
         $username = htmlentities($_POST['username']);
         $lastname = htmlentities($_POST['lastname']);
