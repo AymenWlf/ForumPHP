@@ -1,10 +1,5 @@
 <?php 
-session_start();
-    if($_SESSION['auth'] == false)
-    {
-        header('Location: signUp.php');
-        
-    };$_SESSION['auth'] = false;
+require('actions/securityAction.php');
 ?>
 
 <!DOCTYPE html>
