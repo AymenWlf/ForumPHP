@@ -6,16 +6,19 @@ function getData($db)
 {
     //Pulling data
     $id = $_GET['id'];
+    $idUser = $_SESSION['id'];
 
-    $findById = $db->prepare('SELECT * FROM question WHERE id = ?');
+    $findById = $db->prepare('SELECT * FROM question WHERE id = ? AND id_user = ?');
     $findById->execute([
         $id,
+        $idUser
     ]);
 
     if($findById->rowCount() == 0)
     {
         header('Location: pinByUser.php');
     }
+
     $question = $findById->fetch();
 
     return $question;
@@ -40,12 +43,13 @@ if(isset($_POST['submit']))
         $modifDate = date('d/m/Y H:i');
         $idUser = $_SESSION['id'];
 
-        $update = $db->prepare('UPDATE question set title = ?,content = ?,modified_at = ? WHERE id = ?');
+        $update = $db->prepare('UPDATE question set title = ?,content = ?,modified_at = ? WHERE id = ? AND id_user = ?');
         $isUpdated = $update->execute([
             $title,
             $content,
             $modifDate,
-            $id
+            $id,
+            $idUser
         ]);
         if($isUpdated)
         {

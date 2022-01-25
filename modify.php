@@ -1,6 +1,7 @@
 <?php 
-    include('actions/question/modifyAction.php');
     include('actions/auth/securityAction.php');
+    include('actions/question/modifyAction.php');
+    
 ?>
 
 <!DOCTYPE html>
