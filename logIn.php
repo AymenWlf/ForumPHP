@@ -1,4 +1,5 @@
-<?php require('actions/auth/logInAction.php'); ?>
+<?php require('actions/auth/logInAction.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include('includes/head.php'); ?>

@@ -1,6 +1,7 @@
 
 <?php include('actions/question/pinByAction.php');
     include('actions/auth/securityAction.php');
+    $_SERVER['page'] = 'pin';
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
                     <p class="card-text"><?php echo $question['content'] ?></p>
                     <h6 class="card-subtitle mb-2 text-muted"><?php echo $question['created_at'] ?></h6>
                     <a href="#" class="btn btn-danger mx-3">Delete</a>
-                    <a href="#" class="btn btn-outline-warning">Modify</a>
+                    <a <?php printf('href="modify.php?id=%s"',$question['id'])?> class="btn btn-outline-warning">Modify</a>
                 </div>
             </div>
         <?php 
