@@ -1,7 +1,8 @@
 <?php
-session_start();
+
 try
 {
+    session_start();
     $db = new PDO("mysql:host=localhost;dbname=forumPHP;charset=utf8","root","");
 }catch(Exception $e)
 {

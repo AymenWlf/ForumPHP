@@ -1,5 +1,8 @@
 <?php
-
+if(isset($_SESSION))
+{
+    header('Location: index.php');
+}
 require('actions/database.php');
 
 if(isset($_POST['submit']))

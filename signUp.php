@@ -1,10 +1,11 @@
 
-<?php require('actions/signUpAction.php')?>
+<?php require('actions/auth/signUpAction.php')?>
 <!DOCTYPE html>
 <html lang="en">
-<?php require('includes/head.php'); ?>
+<?php include('includes/head.php'); ?>
 <title>SignUp Page</title>
 <body>
+<?php include('includes/navbar.php')?>
     <div class="container signUp mt-5">
         <?php if(isset($errorMSG))
         {
