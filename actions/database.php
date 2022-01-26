@@ -2,7 +2,10 @@
 
 try
 {
-    session_start();
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
     $db = new PDO("mysql:host=localhost;dbname=forumPHP;charset=utf8","root","");
 }catch(Exception $e)
 {

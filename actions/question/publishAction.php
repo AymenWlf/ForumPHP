@@ -11,11 +11,19 @@ if(isset($_POST['submit']))
         $date = date('d/m/Y H:i');
         $idUser = $_SESSION['id'];
 
-        $publish = $db->prepare('INSERT INTO question(title,content,id_user,created_at)VALUES(?,?,?,?)');
+        $getAuthor = $db->prepare('SELECT username FROM user WHERE id = ?');
+        $getAuthor->execute([
+            $idUser
+        ]);
+        $authorsData = $getAuthor->fetch();
+        $author = $authorsData['username'];
+
+        $publish = $db->prepare('INSERT INTO question(title,content,id_user,author,created_at)VALUES(?,?,?,?,?)');
         $isPublished = $publish->execute([
             $title,
             $content,
             $idUser,
+            $author,
             $date
         ]);
         if($isPublished)

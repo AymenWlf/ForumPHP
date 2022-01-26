@@ -1,7 +1,10 @@
 <?php
-if(isset($_SESSION))
+if(session_start())
 {
-    header('Location: index.php');
+    if(isset($_SESSION['auth']))
+    {
+        header('Location: index.php');
+    }
 }
 require('actions/database.php');
 

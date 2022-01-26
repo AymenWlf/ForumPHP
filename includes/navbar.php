@@ -16,9 +16,15 @@
         <!-- My questions -->
 
       </ul>
+        <?php if($_SESSION['auth'])
+        {
+        ?>
       <div class="nav-item">
         <a class="nav-link bg-dark " href="actions/auth/logOutAction.php">LogOut</a>
       </div>
+      <?php 
+      }
+      ?>
     </div>
   </div>
 </nav>

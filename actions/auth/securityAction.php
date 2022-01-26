@@ -1,11 +1,21 @@
 <?php 
-
-if(!$_SESSION['auth'])
+if(isset($_SESSION))
+{
+    if(isset($_SESSION['auth']))
+    {
+        if(!$_SESSION)
+        {
+            session_start();
+        }
+    }else
+    {
+        header('Location: logIn.php');
+    }
+}else
 {
     if(!$_SESSION)
     {
         session_start();
     }
-    header('Location: logIn.php');
 }
 ?>
