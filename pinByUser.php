@@ -33,7 +33,6 @@
         <?php if($findByUser->rowCount() == 0)
         {
             print("<h4>Vous n'avez aucune question !</h4>");
-       
         }
        ?>
         </div>
