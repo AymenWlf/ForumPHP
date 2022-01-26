@@ -8,4 +8,3 @@ $findByUser->execute([
 ]);
 
 $question = $findByUser->fetch();
-
