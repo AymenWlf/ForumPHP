@@ -38,8 +38,8 @@ if(isset($_POST['submit']))
     if(!empty($_POST['title'] AND $_POST['content']))
     {
         $id = $_GET['id'];
-        $title = htmlentities($_POST['title']);
-        $content = htmlentities($_POST['content']);
+        $title = htmlspecialchars($_POST['title']);
+        $content = htmlspecialchars($_POST['content']);
         $modifDate = date('d/m/Y H:i');
         $idUser = $_SESSION['id'];
 

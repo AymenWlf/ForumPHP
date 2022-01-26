@@ -13,6 +13,7 @@ if(isset($_GET['id']) AND !empty($_GET['id']))
         $id,
         $idUser
     ]);
+    
 
     if($findById->rowCount() == 0)
     {

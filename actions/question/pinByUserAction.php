@@ -7,3 +7,5 @@ $findByUser->execute([
     $_SESSION['id'],
 ]);
 
+$question = $findByUser->fetch();
+

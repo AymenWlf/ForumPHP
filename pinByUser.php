@@ -1,5 +1,5 @@
 
-<?php include('actions/question/pinByAction.php');
+<?php include('actions/question/pinByUserAction.php');
     include('actions/auth/securityAction.php');
     $_SERVER['page'] = 'pin';
 ?>
@@ -13,7 +13,8 @@
     <div class="container signUp mt-5">
         <h2>My Questions :</h2> <br>
         <div class="d-flex flex-wrap">
-        <?php while($question = $findByUser->fetch())
+        <?php 
+        while($question = $findByUser->fetch())
         {  
         ?>
             <div class="card mx-3 mb-5" style="min-width: 20rem;">

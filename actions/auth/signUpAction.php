@@ -16,7 +16,6 @@ if(isset($_POST['submit']))
         $username = htmlentities($_POST['username']);
         $lastname = htmlentities($_POST['lastname']);
         $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
-
         
         $checkExistUser = $db->prepare('SELECT id FROM user WHERE username = ?');
         $checkExistUser->execute([

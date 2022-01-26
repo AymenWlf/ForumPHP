@@ -33,18 +33,26 @@ require('actions/question/getBySearchAction.php');
         <div class="card mt-5">
             <div class="card-header">
                 <?php 
-                print("Publié par <strong>".$question['author']."</strong> le  <strong>".$question['created_at']."</strong>");
+                print("Publied by <strong>".$question['author']."</strong> the <strong>".$question['created_at']."</strong>");
                 ($question['modified_at']) ? print(" / last modif : ".$question['modified_at'] ): null;
                 ?>
             </div>
             <div class="card-body">
                 <h5 class="card-title"> <?php echo $question['title']?></h5>
                 <p class="card-text"><?php echo $question['content']?>.</p>
-                <a href="#" class="btn btn-primary">Answer</a>
+                <a <?php printf('href="question.php?id=%s"',$question['id'])?>  class="btn btn-primary">Answer</a>
             </div>
         </div>
         <?php 
-        }?>
+        }
+        ?>
+
+        <?php if($getQuestions->rowCount() == 0)
+        {
+            print("<h4>Vous n'avez aucune reponse !</h4>");
+       
+        }
+        ?>
     </div>
 <?php include('includes/footer.php')?>
 </body>
