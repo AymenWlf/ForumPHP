@@ -49,7 +49,7 @@ require('actions/question/getBySearchAction.php');
 
         <?php if($getQuestions->rowCount() == 0)
         {
-            print("<h4>Vous n'avez aucune reponse !</h4>");
+            print("<h4 class='mt-5'>Vous n'avez aucune reponse !</h4>");
        
         }
         ?>

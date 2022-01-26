@@ -1,5 +1,5 @@
 
-<?php include('actions/question/pinByAction.php');
+<?php include('actions/question/pinByUserAction.php');
     include('actions/auth/securityAction.php');
     $_SERVER['page'] = 'pin';
 ?>
